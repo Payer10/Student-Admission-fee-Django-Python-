@@ -2,7 +2,6 @@ services:
   - type: web
     name: student-admission-fee
     env: python
-    plan: free
-    branch: main
-    buildCommand: "pip install -r requirements.txt && python 'admission fee'/manage.py collectstatic --noinput"
-    startCommand: "gunicorn 'admission fee'.wsgi:application"
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn admission_fee.payment_gatway.wsgi:application
+    workingDirectory: admission_fee
