@@ -4,5 +4,5 @@ services:
     env: python
     plan: free
     branch: main
-    buildCommand: "pip install -r requirements.txt && python manage.py collectstatic --noinput"
-    startCommand: "gunicorn StudentAdmissionFee.wsgi:application"
+    buildCommand: "pip install -r requirements.txt && python 'admission fee'/manage.py collectstatic --noinput"
+    startCommand: "gunicorn 'admission fee'.wsgi:application"
